@@ -1,6 +1,14 @@
-import { searchRooms } from "@/lib/mock-store";
+import "./globals.css";
 
-export async function GET(request) {
-  const query = request.nextUrl.searchParams.get("q") || "";
-  return Response.json({ results: searchRooms(query) });
+export const metadata = {
+  title: "TalkNest",
+  description: "Anonymous voice chat for India",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
 }
